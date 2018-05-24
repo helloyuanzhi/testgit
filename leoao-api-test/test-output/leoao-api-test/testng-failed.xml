@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [leoao-api-test]" allow-return-values="true">
+  <test name="couponcenter_test(failed)">
+    <classes>
+      <class name="com.leoao.test.couponcenter.java_couponcenter">
+        <methods>
+          <include name="couponcenter_updateusercouponfororder"/>
+          <include name="couponcenter_updatestatus"/>
+          <include name="couponcenter_getusercouponbyid"/>
+          <include name="couponcenter_updateusercouponstatus"/>
+          <include name="couponcenter_getfailputcouponuserbytaskid"/>
+          <include name="couponcenter_createcoupontemplate"/>
+          <include name="couponcenter_getcouponbyid"/>
+          <include name="couponcenter_getcouponpagebyparam"/>
+          <include name="couponcenter_putcoupon"/>
+          <include name="setUp"/>
+          <include name="couponcenter_getputcoupontaskpage"/>
+          <include name="couponcenter_getuseravailablecoupo"/>
+          <include name="couponcenter_getusercouponbyuserId"/>
+          <include name="couponcenter_updatecoupontemplate"/>
+          <include name="couponcenter_getusercouponpagebyuserid"/>
+          <include name="couponcenter_batchputcoupon"/>
+          <include name="couponcenter_updateusercouponforpay"/>
+        </methods>
+      </class> <!-- com.leoao.test.couponcenter.java_couponcenter -->
+    </classes>
+  </test> <!-- couponcenter_test(failed) -->
+</suite> <!-- Failed suite [leoao-api-test] -->
