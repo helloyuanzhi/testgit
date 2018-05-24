@@ -11,6 +11,7 @@ def coach_sin():
         api_name = '教练签到接口'
         print "宇豪测试git merge "
         print "111111"
+        print "222222"
         url = 'v1/coach_app/coachSigIn'
 
         params = {
