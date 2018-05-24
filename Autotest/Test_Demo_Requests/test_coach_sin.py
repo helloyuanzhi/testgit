@@ -9,6 +9,7 @@ def coach_sin():
     for i in range(1, 5):
 
         api_name = '教练签到接口'
+        print "宇豪测试git merge "
 
         url = 'v1/coach_app/coachSigIn'
 
