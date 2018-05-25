@@ -9,9 +9,6 @@ def coach_sin():
     for i in range(1, 5):
 
         api_name = '教练签到接口'
-        print "宇豪测试git merge "
-        print "111111"
-        print "222222"
         url = 'v1/coach_app/coachSigIn'
 
         params = {
@@ -21,7 +18,7 @@ def coach_sin():
             "remark": "",
             "isOutside": 0
 
-            # 120.129617,30.29847
+
         }
 
         result = base_requests.post(url, params)
