@@ -12,7 +12,7 @@ appointmentBeginTime = int(time.time())+60
 for i in range(1, 3):
 
     api_name = '排课接口'
-    print "11111"
+    print "2222"
 
     url = 'v1/coach_app/addSchedule'
     appointmentEndTime = appointmentBeginTime + 120
