@@ -16,7 +16,7 @@ reload(sys)
 config = {
 
     # 测试站域名
-    "domain": "https://tp.leoao.com/",
+    "domain": "http://t.leoao.com/",
     # 线上域名
     #"domain": "https://tp.leoao.com/",
     # 私教测试后台地址
@@ -37,7 +37,7 @@ header = {
 
      #"lk-ssotoken": "62879fb547aa61e29e49ed922cbfb345"
      #"lk-ssotoken": "0589966032fad52abbdb39facb0debbd"
-     "lk-ssotoken": "7fdf35983812aaba14b3d6c02079cfba"
+     "lk-ssotoken": "f4abfa5dbd47f4ea3fca75484b59d382"
 }
 
 # 定义requests统一的解析json方法 post

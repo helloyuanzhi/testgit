@@ -26,7 +26,7 @@ for i in range(1, 3):
         "subjectInfo": "宇豪添加课程内容",
         "orderNo": "订单编号11",
         "classInfoName": "测试课程名",
-        "userAvailId": 145983
+        "userAvailId": 331701
     }
 
     result = base_requests.post(url, params)
