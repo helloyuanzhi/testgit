@@ -1,10 +1,12 @@
 # coding=utf-8
-import base_requests
+
 from termcolor import *
 import uniout
 import random
-import main_excute
-
+import sys
+sys.path.append("/Users/yuhao/PycharmProjects/testgit/Autotest/Test_Demo_Requests")
+import base_requests
+import unittest
 # -- D, 安全性问题
 
 
@@ -13,15 +15,13 @@ def balance_gift():
 
         api_name = '余额赠送接口'
         url = 'v1/account/receipts'
-        token = main_excute.token
         userId = random.randint(10000, 1461859)
         amount = random.randint(1, 100000)
         # 金额类型（1：不可提现，2：可提现）非必须，默认为1
         type = random.randint(1, 2)
         params = {
             # 必要, 安全性，校验
-            "userId": 2013714,
-            #"token": "f75d9c24f20f320e1604f47506550ab8",
+            "userId": 1490119,
             # 必要, 金额范围
             "amount": 10000,
             # 必要 , 长度限制
@@ -30,9 +30,9 @@ def balance_gift():
             "type": 1
         }
 
-        result = base_requests.post(url, params)
+        result = base_requests.post2("domain", url, params)
         if result:
-            if result['code'] == 0:
+            if result['code'] == 0 :
                 print colored('%s：执行第 %d 次 用例 -- Pass' % (api_name, i), 'green'), '\n'
 
             else:

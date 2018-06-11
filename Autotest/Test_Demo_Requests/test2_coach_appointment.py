@@ -9,10 +9,9 @@ import uniout
 
 appointmentBeginTime = int(time.time())+60
 
-for i in range(1, 3):
+for i in range(1, 2):
 
     api_name = '排课接口'
-    print "2222"
 
     url = 'v1/coach_app/addSchedule'
     appointmentEndTime = appointmentBeginTime + 120
@@ -21,13 +20,13 @@ for i in range(1, 3):
 
         "appointmentBeginTime": appointmentBeginTime,
         "appointmentEndTime": appointmentEndTime,
-        "userId": 1490119,
+        "userId": 152334,
         "goodsNo": "01241",
         "storeAreaId": 130,
         "subjectInfo": "宇豪添加课程内容",
         "orderNo": "订单编号11",
         "classInfoName": "测试课程名",
-        "userAvailId": 331701
+        "userAvailId": 331812
     }
 
     result = base_requests.post(url, params)

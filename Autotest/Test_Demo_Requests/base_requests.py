@@ -19,25 +19,28 @@ config = {
     "domain": "http://t.leoao.com/",
     # 线上域名
     #"domain": "https://tp.leoao.com/",
+    # 预发布域名
+    "pdomain":"http://uat-h5-app.leoao.com/lens/conduct/pt/api/dubbo/",
     # 私教测试后台地址
-     "domain2": "http://172.16.150.62:8082/",
+    "domain2": "http://172.16.150.62:8082/",
     # 大平台后台域名
 
-    #"domain2": "http://tlapis-iot-inc.leoao.com",
+    #"domain": "http://tlapis-iot-inc.leoao.com",
     #"domain2": "http://172.16.150.61:8082/"
     # 用户分群测试
     #"domain2": "http://pub-gw.tjapis.leoao-inc.com/"
     #"domain": "https://tp.leoao.com/"
     # "domain": "http://ptest.leoao.com/account"
-    # "domain2": "https://lapis-coach.leoao.com/account/"
+    "domain3": "https://tlapis-coach.leoao.com/coach/"
 }
+
 
 # 定义请求头
 header = {
 
      #"lk-ssotoken": "62879fb547aa61e29e49ed922cbfb345"
      #"lk-ssotoken": "0589966032fad52abbdb39facb0debbd"
-     "lk-ssotoken": "f4abfa5dbd47f4ea3fca75484b59d382"
+     "lk-ssotoken": "31d240cfb63f3bd17a86bf7bf8987eaf"
 }
 
 # 定义requests统一的解析json方法 post
@@ -63,7 +66,7 @@ def post(url, params):
 
 def post2(url, params):
     try:
-        url = '%s%s' % (config["domain2"], url)
+        url = '%s%s' % (config['domain3'], url)
         print '请求地址:', url
         print '入参', json.dumps(params, ensure_ascii=False)
         request = requests.post(url, json=params)
