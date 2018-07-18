@@ -1,4 +1,7 @@
 # coding=utf-8
+
+import sys
+sys.path.append("/Users/yuhao/PycharmProjects/testgit/Autotest/Test_Demo_Requests/")
 import base_requests
 from termcolor import *
 import uniout
@@ -16,7 +19,7 @@ def find_user():
 
         params = {
 
-            "userId": 1490119,
+            "userId": 152334,
             # 归属的分群类型 集合
             "groupIdArr": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
                            15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]

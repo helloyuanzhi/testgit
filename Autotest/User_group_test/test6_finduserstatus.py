@@ -1,11 +1,11 @@
 # coding=utf-8
-import base_requests
+
 from termcolor import *
-import uniout
+import sys
+sys.path.append("/Users/yuhao/PycharmProjects/testgit/Autotest/Test_Demo_Requests/")
 import random
+import base_requests
 
-
-# -- P 前端限制
 
 def find_user_status():
     for i in range(0, 1):
@@ -16,7 +16,7 @@ def find_user_status():
 
         params = {
 
-            "userId": 1490119
+            "userId": 152334
             # "userId": 1624774
         }
 

@@ -31,7 +31,7 @@ config = {
     #"domain2": "http://pub-gw.tjapis.leoao-inc.com/"
     #"domain": "https://tp.leoao.com/"
     # "domain": "http://ptest.leoao.com/account"
-    "domain3": "https://tlapis-coach.leoao.com/coach/"
+    "domain3": "http://172.16.150.61:8083/"
 }
 
 
@@ -40,7 +40,7 @@ header = {
 
      #"lk-ssotoken": "62879fb547aa61e29e49ed922cbfb345"
      #"lk-ssotoken": "0589966032fad52abbdb39facb0debbd"
-     "lk-ssotoken": "31d240cfb63f3bd17a86bf7bf8987eaf"
+     "lk-ssotoken": "A62F64B118B2DEA1C22924E1E045D285"
 }
 
 # 定义requests统一的解析json方法 post
