@@ -1,0 +1,57 @@
+-   config:
+        name: 原生测试文件 - login
+        request:
+            base_url: ''
+            headers:
+                User-Agent: !!python/unicode 'Mozilla/5.0 (Macintosh; Intel Mac OS
+                    X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99
+                    Safari/537.36'
+                Connection: 'close'
+        variables: []
+        parameters:
+            - user_id: ${get_test_user_id(100)}
+-   test:
+        name: userId======
+        request:
+            headers:
+                !!python/unicode 'Content-Type': !!python/unicode 'application/json'
+                !!python/unicode 'Postman-Token': !!python/unicode 'b9326a12-4f41-250d-6476-592edb62951a'
+            json:
+                !!python/unicode 'id': 1
+                !!python/unicode 'jsonrpc': !!python/unicode '2.0'
+                !!python/unicode 'method': !!python/unicode 'setUserToken'
+                !!python/unicode 'params':
+                -   !!python/unicode 'userId': !!python/unicode '$user_id'
+            method: !!python/unicode 'POST'
+            url: !!python/unicode 'http://127.0.0.1:8090/lefit-user/com.lefit.user.client.core.UserTokenApi'
+        extract:
+            - token: content.result.data.token
+        validate:
+        -   eq:
+            - status_code
+            - 200
+
+-   test:
+        name: !!python/unicode '解析token并判断userId'
+        request:
+            headers:
+                !!python/unicode 'Content-Type': !!python/unicode 'application/json'
+                !!python/unicode 'Postman-Token': !!python/unicode '722d71ae-2ee4-d422-98d7-6c365216c4b1'
+            json:
+                !!python/unicode 'id': 1
+                !!python/unicode 'jsonrpc': !!python/unicode '2.0'
+                !!python/unicode 'method': !!python/unicode 'decodeToken'
+                !!python/unicode 'params':
+                -   !!python/unicode 'token': !!python/unicode '$token'
+            method: !!python/unicode 'POST'
+            url: !!python/unicode 'http://127.0.0.1:8090/lefit-user/com.lefit.user.client.core.UserTokenApi'
+        validate:
+        -   eq:
+            - status_code
+            - 200        
+        -   eq:
+            - content.result.data.token
+            - $token
+        -   eq:
+            - content.result.data.userId
+            - $user_id

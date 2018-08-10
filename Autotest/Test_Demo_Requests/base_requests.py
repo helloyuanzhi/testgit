@@ -16,9 +16,11 @@ reload(sys)
 config = {
 
     # 测试站域名
-    "domain": "http://t.leoao.com/",
+    #"domain": "http://t.leoao.com/",
     # 线上域名
-    #"domain": "https://tp.leoao.com/",
+    "domain": "https://tp.leoao.com/",
+    #UAT
+    #"domain": "https://uat-tp.leoao.com/",
     # 预发布域名
     "pdomain":"http://uat-h5-app.leoao.com/lens/conduct/pt/api/dubbo/",
     # 私教测试后台地址
@@ -40,7 +42,7 @@ header = {
 
      #"lk-ssotoken": "62879fb547aa61e29e49ed922cbfb345"
      #"lk-ssotoken": "0589966032fad52abbdb39facb0debbd"
-     "lk-ssotoken": "A62F64B118B2DEA1C22924E1E045D285"
+     "lk-ssotoken": "2CE353F3CEEB609965C74D079CCF36CF"
 }
 
 # 定义requests统一的解析json方法 post

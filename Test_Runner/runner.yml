@@ -1,0 +1,87 @@
+-   config:
+        name: testset description
+        request:
+            base_url: ''
+            headers:
+                User-Agent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X)
+                    AppleWebKit/604.1.38 (KHTML,like Gecko) Version/11.0 Mobile/15A372
+                    Safari/604.1'
+        variables:
+            - days: 7
+        parameters:
+            - coachId: ${get_account(3)}
+
+-   test:
+        name: /coach/v1/coach/tagslist
+        request:
+            headers:
+                content-type: application/json;charset=UTF-8
+                dnt: '1'
+            json:
+                coachId: $coachId
+            method: POST
+            url: https://tlapis-coach.leoao.com/coach/v1/coach/tagslist
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.code
+            - 0
+        -   eq:
+            - content.msg
+            - success
+        -   eq:
+            - content.errorMessage
+            - ''
+-   test:
+        name: /coach/v1/coach/commentslist
+        request:
+            headers:
+                content-type: application/json;charset=UTF-8
+                dnt: '1'
+            json:
+                coachId: 149
+                page: 1
+                pageSize: 20
+            method: POST
+            url: https://tlapis-coach.leoao.com/coach/v1/coach/commentslist
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.code
+            - 0
+        -   eq:
+            - content.msg
+            - success
+        -   eq:
+            - content.errorMessage
+            - ''
+-   test:
+        name: /coach/v1/coach/freeTime
+        request:
+            headers:
+                content-type: application/json;charset=UTF-8
+                dnt: '1'
+            json:
+                coachId: '149'
+                date: 1533261649
+                days: $days
+            method: POST
+            url: https://tlapis-coach.leoao.com/coach/v1/coach/freeTime
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.code
+            - 0
+        -   eq:
+            - content.msg
+            - success
+        -   eq:
+            - content.errorMessage
+            - ''
+
