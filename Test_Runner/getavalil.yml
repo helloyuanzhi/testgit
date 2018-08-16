@@ -1,0 +1,61 @@
+-   config:
+        name: testset description
+        request:
+            base_url: ''
+            headers:
+                User-Agent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X)
+                    AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372
+                    Safari/604.1'
+        variables: []
+
+    # 宇豪添加注释
+-   test:
+        name: 获取登陆接口
+        request:
+            headers:
+                content-type: application/json;charset=UTF-8
+                dnt: '1'
+            json:
+                id: 1
+                jsonrpc: '2.0'
+                method: 'setUserToken'
+                params:
+                    - userId: '1490119'      
+            method: POST
+            url: http://172.16.150.67:8090/lefit-user/com.lefit.user.client.core.UserTokenApi
+        extract:
+            - lk_ssotoken: content.result.data.token
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.result.code
+            - '00000'
+        -   eq:
+            - content.result.msg
+            - ~
+-   test:
+        name: 获取用户私教权益
+        request:
+            headers:
+                content-type: application/json;charset=UTF-8
+                lk-ssotoken: $lk_ssotoken
+                dnt: '1'
+            json:
+                isIndexPage: 0
+            method: POST
+            url: https://tlapis-coach.leoao.com/coach/v1/coach/queryExclusiveCoach
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.code
+            - 0
+        -   eq:
+            - content.msg
+            - success
+        -   eq:
+            - content.errorMessage
+            - ''

@@ -1,0 +1,235 @@
+
+# 用户分群接口测试
+
+
+-   config:
+        name: testset description
+        request:
+            base_url: ''
+            headers:
+                User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'
+        parameters:
+            - user_id: ${get_userid(10)}
+        variables: []
+-   test:
+        name: 新增用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: d764ffa7-3a22-1d9a-c9d9-ef67de4fc889
+            json:
+                bizType: 2
+                name: 宇豪添加名称
+                description: 宇豪添加描述
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/addUserGroup
+        extract:
+            - new_id: content.result
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.status.code
+            - 0
+
+# 通过查询验证新增是否正确
+
+-   test:
+        name: 查询新增用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 60424470-edc6-904f-38f5-d26656da6efb
+            json:
+                id: $new_id
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findByRecordId
+# 校验判断，新增的分群名称，分群描述，分群业务线，状态是否正确
+        validate:
+        -   eq:
+            - content.status.code
+            - 0
+        -   eq:
+            - content.result.name
+            - 宇豪添加名称
+        -   eq:
+            - content.result.description
+            - 宇豪添加描述
+        -   eq:
+            - content.result.bizType
+            - 2
+        -   eq:
+            - content.result.status
+            - 1
+-   test:
+        name: 更新用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 2389aad2-3818-5799-5550-55be6a0a7add
+            json:
+                name: 修改分群名称
+                description: 修改分群描述
+                id: $new_id
+                bizType: 1
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/updateUserGroup
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.status.code
+            - 0
+# 通过查询验证修改是否正确
+-   test:
+        name: 查询修改用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 60424470-edc6-904f-38f5-d26656da6efb
+            json:
+                id: $new_id
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findByRecordId
+# 校验判断，新增的分群名称，分群描述，分群业务线，状态是否正确
+        validate:
+        -   eq:
+            - content.status.code
+            - 0
+        -   eq:
+            - content.result.name
+            - 修改分群名称
+        -   eq:
+            - content.result.description
+            - 修改分群描述
+        -   eq:
+            - content.result.bizType
+            - 1
+        -   eq:
+            - content.result.status
+            - 1
+
+-   test:
+        name: 删除用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 8c92e1ed-7399-d93c-ccee-e976e1bf4808
+            json:
+                id: $new_id
+
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/deleteUserGroup
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.result
+            - 1
+# 通过查询验证删除是否正确
+-   test:
+        name: 查询删除用户分群
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 60424470-edc6-904f-38f5-d26656da6efb
+            json:
+                id: $new_id
+
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findByRecordId
+# 校验判断，删除分类状态是否正确
+        validate:
+        -   eq:
+            - content.status.code
+            - 0
+        -   eq:
+            - content.result.status
+            - 0
+
+-   test:
+        name: 查询用户分群归类
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: 2c02fcf5-fcbd-37f2-bd84-6ba033d2a440
+            json:
+                userId: $user_id
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findUserStatus
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.status.code
+            - 0
+
+-   test:
+        name: 查询用户分群组
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: a3b1797f-a057-cd2e-b10a-9dc4345cd989
+            json:
+                page: 1
+                pageSize: 10
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findAllGroup
+        validate:
+        -   eq:
+            - content.status.code
+            - 0
+        -   eq:
+            - content.result.userGroupList.0.name
+            - 注册用户
+        -   eq:
+            - content.result.userGroupList.0.status
+            - 1
+        -   eq:
+            - content.result.userGroupList.0.bizType
+            - 0
+        -   eq:
+            - content.result.userGroupList.4.name
+            - 会员卡现会员
+        -   eq:
+            - content.result.userGroupList.4.status
+            - 1
+        -   eq:
+            - content.result.userGroupList.4.bizType
+            - 2
+
+-   test:
+        name: 验证用户归属分群名称
+        request:
+            headers:
+                Content-Type: application/json
+                DNT: '1'
+                Postman-Token: a1dd7125-a797-550f-3b86-2567a5fbabbd
+            json:
+
+                userId: $user_id
+                groupIdArr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60]
+            method: POST
+            url: http://172.16.150.61:8083/v1/rights/findUser
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.status.code
+            - 0
+
+

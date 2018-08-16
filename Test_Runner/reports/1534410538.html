@@ -1,0 +1,3397 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      text-align: center;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2018-08-16 17:08:58</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.252 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 1.5.8 </td>
+      <td>CPython 3.6.0 </td>
+      <td colspan="2">Darwin-17.7.0-x86_64-i386-64bit</td>
+    </tr>
+    <tr>
+      <th>TOTAL</th>
+      <th>SUCCESS</th>
+      <th>FAILED</th>
+      <th>ERROR</th>
+      <th>SKIPPED</th>
+      <!-- <th>ExpectedFailure</th>
+      <th>UnexpectedSuccess</th> -->
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>8</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <!-- <td>0</td>
+      <td>0</td> -->
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>testset description</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <th>base_url</th>
+      <td colspan="2"></td>
+      <th colspan="2" class="detail">
+        <a class="button" href="#suite_output_1">parameters & output</a>
+        <div id="suite_output_1" class="overlay">
+            <div class="popup">
+                <h2>Parameters and Output</h2>
+                <a class="close" href="#suite_1">&times;</a>
+                <div class="content">
+                  <div style="overflow: auto">
+                      <table>
+                        <tr>
+                          <th>variables</th>
+                          <th>output</th>
+                        </tr>
+                        
+                      </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>TOTAL: 9</td>
+      <td>SUCCESS: 8</td>
+      <td>FAILED: 1</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">新增用户分群</td>
+      <td style="text-align:center;width:6em;">148.37 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_1">log</a>
+        <div id="popup_log_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/addUserGroup
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: d764ffa7-3a22-1d9a-c9d9-ef67de4fc889
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 117
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.475868
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'bizType': 2, 'name': '宇豪添加名称', 'description': '宇豪添加描述'}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;bizType&#34;: 2, &#34;name&#34;: &#34;\u5b87\u8c6a\u6dfb\u52a0\u540d\u79f0&#34;, &#34;description&#34;: &#34;\u5b87\u8c6a\u6dfb\u52a0\u63cf\u8ff0&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: d764ffa7-3a22-1d9a-c9d9-ef67de4fc889
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 117
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            96
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            148.37
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            14.993
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;4&#34;},&#34;result&#34;:64,&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/addUserGroup
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"4"},"result":64,"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '4'}, 'result': 64, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>96</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>148.37</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>14.993</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">查询新增用户分群</td>
+      <td style="text-align:center;width:6em;">7.26 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_2">log</a>
+        <div id="popup_log_1_2" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findByRecordId
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 10
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.626312
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'id': 64}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 64}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 10
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            230
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            7.26
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            5.75
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;1&#34;},&#34;result&#34;:{&#34;id&#34;:64,&#34;name&#34;:&#34;宇豪添加名称&#34;,&#34;description&#34;:&#34;宇豪添加描述&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1534410462,&#34;mtime&#34;:1534410502000},&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findByRecordId
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"1"},"result":{"id":64,"name":"宇豪添加名称","description":"宇豪添加描述","bizType":2,"status":1,"ctime":1534410462,"mtime":1534410502000},"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '1'}, 'result': {'id': 64, 'name': '宇豪添加名称', 'description': '宇豪添加描述', 'bizType': 2, 'status': 1, 'ctime': 1534410462, 'mtime': 1534410502000}, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.name
+                      </td>
+                      <td>eq</td>
+                      <td>宇豪添加名称</td>
+                      <td>宇豪添加名称</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.description
+                      </td>
+                      <td>eq</td>
+                      <td>宇豪添加描述</td>
+                      <td>宇豪添加描述</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.bizType
+                      </td>
+                      <td>eq</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.status
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>230</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>7.26</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>5.75</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">更新用户分群</td>
+      <td style="text-align:center;width:6em;">8.87 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_3">log</a>
+        <div id="popup_log_1_3" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/updateUserGroup
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 2389aad2-3818-5799-5550-55be6a0a7add
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 127
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.6351721
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'name': '修改分群名称', 'description': '修改分群描述', 'id': 64, 'bizType': 1}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;name&#34;: &#34;\u4fee\u6539\u5206\u7fa4\u540d\u79f0&#34;, &#34;description&#34;: &#34;\u4fee\u6539\u5206\u7fa4\u63cf\u8ff0&#34;, &#34;id&#34;: 64, &#34;bizType&#34;: 1}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 2389aad2-3818-5799-5550-55be6a0a7add
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 127
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            95
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            8.87
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            7.372
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;4&#34;},&#34;result&#34;:1,&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/updateUserGroup
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"4"},"result":1,"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '4'}, 'result': 1, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>95</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>8.87</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>7.372</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_4">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">查询修改用户分群</td>
+      <td style="text-align:center;width:6em;">6.45 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_4">log</a>
+        <div id="popup_log_1_4" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_4">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findByRecordId
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 10
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.64538
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'id': 64}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 64}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 10
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            230
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            6.45
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            5.105
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;1&#34;},&#34;result&#34;:{&#34;id&#34;:64,&#34;name&#34;:&#34;修改分群名称&#34;,&#34;description&#34;:&#34;修改分群描述&#34;,&#34;bizType&#34;:1,&#34;status&#34;:1,&#34;ctime&#34;:1534410462,&#34;mtime&#34;:1534410502000},&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findByRecordId
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"1"},"result":{"id":64,"name":"修改分群名称","description":"修改分群描述","bizType":1,"status":1,"ctime":1534410462,"mtime":1534410502000},"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '1'}, 'result': {'id': 64, 'name': '修改分群名称', 'description': '修改分群描述', 'bizType': 1, 'status': 1, 'ctime': 1534410462, 'mtime': 1534410502000}, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.name
+                      </td>
+                      <td>eq</td>
+                      <td>修改分群名称</td>
+                      <td>修改分群名称</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.description
+                      </td>
+                      <td>eq</td>
+                      <td>修改分群描述</td>
+                      <td>修改分群描述</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.bizType
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.status
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>230</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>6.45</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>5.105</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_5">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">删除用户分群</td>
+      <td style="text-align:center;width:6em;">7.7 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_5">log</a>
+        <div id="popup_log_1_5" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_5">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/deleteUserGroup
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 8c92e1ed-7399-d93c-ccee-e976e1bf4808
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 10
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.6534872
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'id': 64}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 64}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 8c92e1ed-7399-d93c-ccee-e976e1bf4808
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 10
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            95
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            7.7
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            6.333
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;2&#34;},&#34;result&#34;:1,&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/deleteUserGroup
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"2"},"result":1,"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '2'}, 'result': 1, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>95</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>7.7</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>6.333</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_6">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">查询删除用户分群</td>
+      <td style="text-align:center;width:6em;">6.59 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_6">log</a>
+        <div id="popup_log_1_6" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_6">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findByRecordId
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 10
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.6624372
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'id': 64}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 64}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 60424470-edc6-904f-38f5-d26656da6efb
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 10
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            230
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            6.59
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            5.098
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;1&#34;},&#34;result&#34;:{&#34;id&#34;:64,&#34;name&#34;:&#34;修改分群名称&#34;,&#34;description&#34;:&#34;修改分群描述&#34;,&#34;bizType&#34;:1,&#34;status&#34;:0,&#34;ctime&#34;:1534410462,&#34;mtime&#34;:1534410502000},&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findByRecordId
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"1"},"result":{"id":64,"name":"修改分群名称","description":"修改分群描述","bizType":1,"status":0,"ctime":1534410462,"mtime":1534410502000},"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '1'}, 'result': {'id': 64, 'name': '修改分群名称', 'description': '修改分群描述', 'bizType': 1, 'status': 0, 'ctime': 1534410462, 'mtime': 1534410502000}, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.status
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>230</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>6.59</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>5.098</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_7">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">查询用户分群归类</td>
+      <td style="text-align:center;width:6em;">9.07 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_7">log</a>
+        <div id="popup_log_1_7" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_7">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findUserStatus
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: 2c02fcf5-fcbd-37f2-bd84-6ba033d2a440
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 16
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.6731892
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'userId': 2473}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;userId&#34;: 2473}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: 2c02fcf5-fcbd-37f2-bd84-6ba033d2a440
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 16
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            358
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            9.07
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            7.765
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;3&#34;},&#34;result&#34;:{&#34;isRegisted&#34;:1,&#34;isPaid&#34;:0,&#34;isCurrentMember&#34;:0,&#34;isExperienceMember&#34;:0,&#34;isPaidBike&#34;:0,&#34;isPaidCrossFit&#34;:0,&#34;isPaidYoga&#34;:0,&#34;isPaidPrivateTeach&#34;:0,&#34;isPaidExcellentTeam&#34;:0,&#34;groupIdArr&#34;:[1,34,35,38,11,12,44,13,46,15,16,17,49,18,52,21,22,23,56,57,26,27,30],&#34;user_id&#34;:2473},&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findUserStatus
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"3"},"result":{"isRegisted":1,"isPaid":0,"isCurrentMember":0,"isExperienceMember":0,"isPaidBike":0,"isPaidCrossFit":0,"isPaidYoga":0,"isPaidPrivateTeach":0,"isPaidExcellentTeam":0,"groupIdArr":[1,34,35,38,11,12,44,13,46,15,16,17,49,18,52,21,22,23,56,57,26,27,30],"user_id":2473},"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '3'}, 'result': {'isRegisted': 1, 'isPaid': 0, 'isCurrentMember': 0, 'isExperienceMember': 0, 'isPaidBike': 0, 'isPaidCrossFit': 0, 'isPaidYoga': 0, 'isPaidPrivateTeach': 0, 'isPaidExcellentTeam': 0, 'groupIdArr': [1, 34, 35, 38, 11, 12, 44, 13, 46, 15, 16, 17, 49, 18, 52, 21, 22, 23, 56, 57, 26, 27, 30], 'user_id': 2473}, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>358</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>9.07</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>7.765</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_8">
+      <th class="failure" style="width:5em;">failure</td>
+      <td colspan="2">查询用户分群组</td>
+      <td style="text-align:center;width:6em;">9.0 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_8">log</a>
+        <div id="popup_log_1_8" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_8">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findAllGroup
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: a3b1797f-a057-cd2e-b10a-9dc4345cd989
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 27
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.6840582
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'page': 1, 'pageSize': 10}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;page&#34;: 1, &#34;pageSize&#34;: 10}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: a3b1797f-a057-cd2e-b10a-9dc4345cd989
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 27
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            2280
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            9.0
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            6.446
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;1&#34;},&#34;result&#34;:{&#34;userGroupList&#34;:[{&#34;id&#34;:1,&#34;name&#34;:&#34;注册用户&#34;,&#34;description&#34;:&#34;用户表中有记录的用户&#34;,&#34;bizType&#34;:0,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501665340000},{&#34;id&#34;:2,&#34;name&#34;:&#34;会员卡已付费会员&#34;,&#34;description&#34;:&#34;会员卡订单表中 有&gt;=1条 商品类型=“会员卡”且服务主题=”基础团课“且金额&gt;0的订单的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1503645263000},{&#34;id&#34;:3,&#34;name&#34;:&#34;私教已付费用户&#34;,&#34;description&#34;:&#34;会员卡订单表中 有&gt;=1条私教类型金额&gt;0订单的用户&#34;,&#34;bizType&#34;:1,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1503645267000},{&#34;id&#34;:4,&#34;name&#34;:&#34;精品团课老用户&#34;,&#34;description&#34;:&#34;订单表中 有&gt;=1条精品团课类型金额&gt;0订单的用户&#34;,&#34;bizType&#34;:4,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1514446586000},{&#34;id&#34;:5,&#34;name&#34;:&#34;会员卡现会员&#34;,&#34;description&#34;:&#34;用户权益表中 拥有会员业务类型权益记录，且权益状态为“正常”且权益剩余量&gt;0 或 权益结束时间&gt;当前时间的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1503645350000},{&#34;id&#34;:6,&#34;name&#34;:&#34;体验会员&#34;,&#34;description&#34;:&#34;会员卡订单表里有 &gt;=1条 商品类型=”会员卡“且卡种=”体验卡“订单的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501664391000},{&#34;id&#34;:7,&#34;name&#34;:&#34;已付费单车馆用户&#34;,&#34;description&#34;:&#34;会员卡订单表中 有&gt;=1条 商品类型=“会员卡”且服务主题=”单车馆“且金额&gt;0的订单的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501664391000},{&#34;id&#34;:8,&#34;name&#34;:&#34;已付费CrossFit用户&#34;,&#34;description&#34;:&#34;会员卡订单表中 有&gt;=1条 商品类型=“会员卡”且服务主题=”CrossFit“且金额&gt;0的订单的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501664391000},{&#34;id&#34;:9,&#34;name&#34;:&#34;已付费瑜伽馆用户&#34;,&#34;description&#34;:&#34;会员卡订单表中 有&gt;=1条 商品类型=“会员卡”且服务主题=”LefitYoga“且金额&gt;0的订单的用户&#34;,&#34;bizType&#34;:2,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501664391000},{&#34;id&#34;:10,&#34;name&#34;:&#34;未注册用户&#34;,&#34;description&#34;:&#34;用户表中无记录的用户&#34;,&#34;bizType&#34;:0,&#34;status&#34;:1,&#34;ctime&#34;:1501662915,&#34;mtime&#34;:1501665340000}],&#34;page&#34;:1,&#34;pageSize&#34;:10,&#34;totalPage&#34;:4,&#34;total&#34;:39},&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findAllGroup
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"1"},"result":{"userGroupList":[{"id":1,"name":"注册用户","description":"用户表中有记录的用户","bizType":0,"status":1,"ctime":1501662915,"mtime":1501665340000},{"id":2,"name":"会员卡已付费会员","description":"会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”基础团课“且金额>0的订单的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1503645263000},{"id":3,"name":"私教已付费用户","description":"会员卡订单表中 有>=1条私教类型金额>0订单的用户","bizType":1,"status":1,"ctime":1501662915,"mtime":1503645267000},{"id":4,"name":"精品团课老用户","description":"订单表中 有>=1条精品团课类型金额>0订单的用户","bizType":4,"status":1,"ctime":1501662915,"mtime":1514446586000},{"id":5,"name":"会员卡现会员","description":"用户权益表中 拥有会员业务类型权益记录，且权益状态为“正常”且权益剩余量>0 或 权益结束时间>当前时间的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1503645350000},{"id":6,"name":"体验会员","description":"会员卡订单表里有 >=1条 商品类型=”会员卡“且卡种=”体验卡“订单的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1501664391000},{"id":7,"name":"已付费单车馆用户","description":"会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”单车馆“且金额>0的订单的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1501664391000},{"id":8,"name":"已付费CrossFit用户","description":"会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”CrossFit“且金额>0的订单的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1501664391000},{"id":9,"name":"已付费瑜伽馆用户","description":"会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”LefitYoga“且金额>0的订单的用户","bizType":2,"status":1,"ctime":1501662915,"mtime":1501664391000},{"id":10,"name":"未注册用户","description":"用户表中无记录的用户","bizType":0,"status":1,"ctime":1501662915,"mtime":1501665340000}],"page":1,"pageSize":10,"totalPage":4,"total":39},"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '1'}, 'result': {'userGroupList': [{'id': 1, 'name': '注册用户', 'description': '用户表中有记录的用户', 'bizType': 0, 'status': 1, 'ctime': 1501662915, 'mtime': 1501665340000}, {'id': 2, 'name': '会员卡已付费会员', 'description': '会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”基础团课“且金额>0的订单的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1503645263000}, {'id': 3, 'name': '私教已付费用户', 'description': '会员卡订单表中 有>=1条私教类型金额>0订单的用户', 'bizType': 1, 'status': 1, 'ctime': 1501662915, 'mtime': 1503645267000}, {'id': 4, 'name': '精品团课老用户', 'description': '订单表中 有>=1条精品团课类型金额>0订单的用户', 'bizType': 4, 'status': 1, 'ctime': 1501662915, 'mtime': 1514446586000}, {'id': 5, 'name': '会员卡现会员', 'description': '用户权益表中 拥有会员业务类型权益记录，且权益状态为“正常”且权益剩余量>0 或 权益结束时间>当前时间的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1503645350000}, {'id': 6, 'name': '体验会员', 'description': '会员卡订单表里有 >=1条 商品类型=”会员卡“且卡种=”体验卡“订单的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1501664391000}, {'id': 7, 'name': '已付费单车馆用户', 'description': '会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”单车馆“且金额>0的订单的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1501664391000}, {'id': 8, 'name': '已付费CrossFit用户', 'description': '会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”CrossFit“且金额>0的订单的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1501664391000}, {'id': 9, 'name': '已付费瑜伽馆用户', 'description': '会员卡订单表中 有>=1条 商品类型=“会员卡”且服务主题=”LefitYoga“且金额>0的订单的用户', 'bizType': 2, 'status': 1, 'ctime': 1501662915, 'mtime': 1501664391000}, {'id': 10, 'name': '未注册用户', 'description': '用户表中无记录的用户', 'bizType': 0, 'status': 1, 'ctime': 1501662915, 'mtime': 1501665340000}], 'page': 1, 'pageSize': 10, 'totalPage': 4, 'total': 39}, 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.userGroupList.0.name
+                      </td>
+                      <td>eq</td>
+                      <td>注册用户</td>
+                      <td>注册用户</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.userGroupList.0.status
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.userGroupList.0.bizType
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="failed">
+                      
+                        content.result.userGroupList.6.name
+                      </td>
+                      <td>eq</td>
+                      <td>会员卡现会员</td>
+                      <td>已付费单车馆用户</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.userGroupList.6.status
+                      </td>
+                      <td>eq</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.result.userGroupList.6.bizType
+                      </td>
+                      <td>eq</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>2280</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>9.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>6.446</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+          <a class="button" href="#popup_attachment_1_8">traceback</a>
+          <div id="popup_attachment_1_8" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_8">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/httprunner/task.py", line 27, in runTest
+    self.test_runner.run_test(self.testcase_dict)
+httprunner.exceptions.ValidationFailure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/httprunner/task.py", line 29, in runTest
+    self.fail(repr(ex))
+AssertionError: ValidationFailure()
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+    
+    <tr id="record_1_9">
+      <th class="success" style="width:5em;">success</td>
+      <td colspan="2">验证用户归属分群名称</td>
+      <td style="text-align:center;width:6em;">16.87 ms</td>
+      <td class="detail">
+
+        <a class="button" href="#popup_log_1_9">log</a>
+        <div id="popup_log_1_9" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_9">&times;</a>
+
+            <div class="content">
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://172.16.150.61:8083/v1/rights/findUser
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>content-type</strong>: application/json
+                          </div>
+                          
+                          <div>
+                            <strong>dnt</strong>: 1
+                          </div>
+                          
+                          <div>
+                            <strong>postman-token</strong>: a1dd7125-a797-550f-3b86-2567a5fbabbd
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 42
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>start_timestamp</th>
+                      <td>
+                        
+                          1534410538.704993
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>json</th>
+                      <td>
+                        
+                          {'userId': 63099, 'groupIdArr': [1, 2, 3]}
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;userId&#34;: 63099, &#34;groupIdArr&#34;: [1, 2, 3]}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>user-agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+                            </div>
+                            
+                            <div>
+                              <strong>Accept-Encoding</strong>: gzip, deflate
+                            </div>
+                            
+                            <div>
+                              <strong>Accept</strong>: */*
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>content-type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>dnt</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>postman-token</strong>: a1dd7125-a797-550f-3b86-2567a5fbabbd
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 42
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_size</th>
+                        <td>
+                          
+                            136
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>response_time_ms</th>
+                        <td>
+                          
+                            16.87
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>elapsed_ms</th>
+                        <td>
+                          
+                            10.628
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content</th>
+                        <td>
+                          
+                            {&#34;status&#34;:{&#34;code&#34;:0,&#34;msg&#34;:&#34;success&#34;,&#34;errorMsg&#34;:null,&#34;runtime&#34;:&#34;3&#34;},&#34;result&#34;:[{&#34;groupName&#34;:&#34;注册用户&#34;,&#34;groupId&#34;:1}],&#34;requestId&#34;:null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                              <pre></pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://172.16.150.61:8083/v1/rights/findUser
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                            {"status":{"code":0,"msg":"success","errorMsg":null,"runtime":"3"},"result":[{"groupName":"注册用户","groupId":1}],"requestId":null}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'status': {'code': 0, 'msg': 'success', 'errorMsg': None, 'runtime': '3'}, 'result': [{'groupName': '注册用户', 'groupId': 1}], 'requestId': None}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.status.code
+                      </td>
+                      <td>eq</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>136</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>16.87</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>10.628</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>
